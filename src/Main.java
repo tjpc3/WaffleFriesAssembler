@@ -13,7 +13,7 @@ public class Main {
 	public static String[] accumulators = {"ax", "bx", "cx", "dx"};
 	
 	public static void main(String args[]) {
-		Stream inputFile;
+		Stream<String> inputFile;
 		try {
 			Path inputFilePath = FileSystems.getDefault().getPath(args[0]);
 			inputFile = Files.lines(inputFilePath);
@@ -50,6 +50,7 @@ public class Main {
 		inputFile.forEach(translate);
 		
 		outputFile.close();
+		inputFile.close();
 		
 		System.out.println("Compiled successfully.");
 	}
