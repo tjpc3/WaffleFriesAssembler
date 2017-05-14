@@ -28,6 +28,7 @@ public class Main {
 		    outputFile = new PrintWriter(args[1], "UTF-8");
 		} catch (IOException e) {
 		   System.err.println("Unable to create new file.");
+		   inputFile.close();
 		   return;
 		}
 		
